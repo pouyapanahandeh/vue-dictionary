@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-if and so on</title>
+</head>
+<body>
+	<div id="root">
+		<!-- if the condition inside the v-if is true, then it goes to render it. if not it will check the v-else-if -->
+		<div v-if="count === 1">
+	  		Green
+		</div>
+		<div v-else-if="count === '2'">
+		  	Blue
+		</div>
+		<div v-else>
+		  Red
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#root',
+			data:{
+				count: 0
+			}
+		})
+	</script>
+</body>
+</html>
