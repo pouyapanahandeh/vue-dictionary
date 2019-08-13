@@ -9,6 +9,10 @@
                 <!-- Here we write simple js for loop in v-for -->
                 <li v-for="item in cat">{{ item }}</li>
             </ul>
+            <h3>call element of object in array with v-for</h3>
+            <ul>
+                <li v-for="index in cars"> {{ index.name }} </li>
+            </ul>
     </div>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script>
@@ -20,6 +24,12 @@
                     'home',
                     'class',
                     'shelter'
+                ],
+                cars:[
+                    {name: 'Citroen'},
+                    {name: 'Acura'},
+                    {name: 'Honda'},
+                    {name: 'Nissan'}
                 ]
             }
         })
