@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-if and so on</title>
+</head>
+<body>
+	<div id="root">
+        <h4>NewsTeller Sign In</h4>
+        <input v-model="email">
+        <!-- we can short the v-bind and : instead, for example we can write :disabled instead what we have -->
+        <button onclick="alert('news Teller Sign In')" v-bind:disabled="email.length < 2">
+            Submit
+        </button>
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+        // as you can see, when you enter more than two character you will see the Button active
+        new Vue({
+            el: '#root',
+            data:{
+                email:''
+            }
+        })
+	</script>
+</body>
+</html>
