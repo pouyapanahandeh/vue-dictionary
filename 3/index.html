@@ -6,14 +6,14 @@
 <body>
 	<div id="root">
 		<!-- if the condition inside the v-if is true, then it goes to render it. if not it will check the v-else-if -->
-		<div v-if="count === 1">
-	  		Green
+		<div v-if="code === 0">
+			<h1>GREEN</h1>
 		</div>
-		<div v-else-if="count === '2'">
-		  	Blue
+		<div v-else-if="code === 1">
+			<h2>BLUE</h2>
 		</div>
 		<div v-else>
-		  Red
+			<h3>RED</h3>
 		</div>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -21,7 +21,7 @@
 		new Vue({
 			el: '#root',
 			data:{
-				count: 0
+				code: 3
 			}
 		})
 	</script>
