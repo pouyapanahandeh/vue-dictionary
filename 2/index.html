@@ -2,17 +2,18 @@
   <body>
     <!-- to undrestand v-model(data bunding) please read two.md -->
     <div id="root">
-      <p>{{ hello }}</p>
-      <input v-model="hello">
-    </div> 
+      <input v-model="greeting">     
+      <h2>{{ greeting }}</h2>
+            
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        new Vue({
-            el: '#root',
-            data: { 
-              hello: 'Hello Vue!'
-            }
-        })
+       new Vue({
+         el: '#root',
+         data:{
+           greeting: 'Hello Vue Learner!, type some thing'
+         }
+       })
     </script>
   </body>
 </html>
