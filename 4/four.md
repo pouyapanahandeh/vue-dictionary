@@ -1,0 +1,1 @@
+## if you put different code at v-show, you will see nothing in the screen but you can find the value which set to not display in dev console.
