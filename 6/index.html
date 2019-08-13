@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>v-for in vue</title>    
+</head>
+<body>
+	<div id="root">
+            <ul>
+                <!-- Here we write simple js for loop in v-for -->
+                <li v-for="item in cat">{{ item }}</li>
+            </ul>
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+        new Vue({
+            el:'#root',
+            data:{
+                cat:[
+                    'office',
+                    'home',
+                    'class',
+                    'shelter'
+                ]
+            }
+        })
+	</script>
+</body>
+</html>
