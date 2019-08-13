@@ -1,13 +1,17 @@
 <html>
   <body>
+    <!-- to undrestand v-model(data bunding) please read two.md -->
     <div id="root">
       <p>{{ hello }}</p>
-    </div>
-    <script src="https://unpkg.com/vue"></script>
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         new Vue({
+            // the id name is define here, and root is our id name
+            // we pass it to el, because we want to change the element
             el: '#root',
             data: { 
+              // we need to pass the name of the object in our html code.
               hello: 'Hello Vue!'
             }
         })
