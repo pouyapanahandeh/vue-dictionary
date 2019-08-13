@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>v-if and so on</title>
+    <title>v-bind in Vue</title>
+    <style>
+        /* here we make some css and then by using V bind gonna use it in our html */
+        .red{
+            border: 5px solid red;
+        }
+
+        .green{
+            border: 5px solid green;
+        }
+    </style>
 </head>
 <body>
 	<div id="root">
         <h4>NewsTeller Sign In</h4>
-        <input v-model="email">
-        <!-- we can short the v-bind and : instead, for example we can write :disabled instead what we have -->
+        <!-- [2] here we use the short v-bind -->
+        <input v-model="email" :class="{red: email.length < 2}">
+        <input v-model="email" :class="[email.length < 2 ? 'red' : 'green']">
+        <!-- [1] we can short the v-bind and : instead, for example we can write :disabled instead what we have -->
         <button onclick="alert('news Teller Sign In')" v-bind:disabled="email.length < 2">
             Submit
         </button>
