@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>v-for in vue</title>    
+</head>
+<body>
+	<div id="root">
+        {{ carNames }}
+        <br/>
+        <!-- instead v-on we can use @ -->
+        <input v-model="newCar" v-on:keyup.enter="addCar">
+        <button v-on:click="addCar">
+            + ADD
+        </button>
+            <ul>
+                <!-- Here we write simple js for loop in v-for -->
+                <li v-for="item in cat">{{ item }}</li>
+            </ul>
+            <h3>call element of object in array with v-for</h3>
+            <ul>
+                <li v-for="index in cars"> {{ index.name }} </li>
+            </ul>
+            <car-name />
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+        Vue.component('car-name', {
+            template:`
+                <ul>
+                    <li>Hasomo</li>    
+                </ul>
+                `
+        })
+
+        new Vue({
+            el:'#root',
+            component:[
+                'car-name'
+            ],
+            data:{
+                cat:[
+                    'office',
+                    'home',
+                    'class',
+                    'shelter'
+                ],
+                cars:[
+                    {name: 'Citroen'},
+                    {name: 'Acura'},
+                    {name: 'Honda'},
+                    {name: 'Nissan'}
+                ],
+
+                newCar: ''
+            },
+            // in vue, inside methods we write all the functions we need.
+            methods: {
+                addCar: function(){
+                    // this include everything in data, addCar is the name of the function, you can see the same name in Button
+                    return this.cars.push({name: this.newCar})
+                    // to make the field empty after printing the name in the list
+                    this.newCar = ''
+                },
+            },
+            computed:{
+                carNames: function(){
+                    if(this.newCar.length > 1){
+                        return this.newCar + 'y'
+                    }
+                }
+            }
+        })
+	</script>
+</body>
+</html>
