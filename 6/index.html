@@ -5,6 +5,8 @@
 </head>
 <body>
 	<div id="root">
+        {{ carNames }}
+        <br/>
         <!-- instead v-on we can use @ -->
         <input v-model="newCar" v-on:keyup.enter="addCar">
         <button v-on:click="addCar">
@@ -46,6 +48,13 @@
                     return this.cars.push({name: this.newCar})
                     // to make the field empty after printing the name in the list
                     this.newCar = ''
+                },
+            },
+            computed:{
+                carNames: function(){
+                    if(this.newCar.length > 1){
+                        return this.newCar + 'y'
+                    }
                 }
             }
         })
