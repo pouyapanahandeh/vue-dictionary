@@ -5,6 +5,10 @@
 </head>
 <body>
 	<div id="root">
+        <input v-model="newCar" v-on:keyup.enter="addCar">
+        <button v-on:click="addCar">
+            + ADD
+        </button>
             <ul>
                 <!-- Here we write simple js for loop in v-for -->
                 <li v-for="item in cat">{{ item }}</li>
@@ -30,7 +34,18 @@
                     {name: 'Acura'},
                     {name: 'Honda'},
                     {name: 'Nissan'}
-                ]
+                ],
+
+                newCar: ''
+            },
+            // in vue, inside methods we write all the functions we need.
+            methods: {
+                addCar: function(){
+                    // this include everything in data, addCar is the name of the function, you can see the same name in Button
+                    return this.cars.push({name: this.newCar})
+                    // to make the field empty after printing the name in the list
+                    this.newCar = ''
+                }
             }
         })
 	</script>
