@@ -5,6 +5,7 @@
 </head>
 <body>
 	<div id="root">
+        <!-- instead v-on we can use @ -->
         <input v-model="newCar" v-on:keyup.enter="addCar">
         <button v-on:click="addCar">
             + ADD
