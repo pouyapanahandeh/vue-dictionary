@@ -2,18 +2,17 @@
   <body>
     <!-- to undrestand v-model(data bunding) please read two.md -->
     <div id="root">
-      <p>{{ hello }}</p>
-    </div> 
+      {{ greeting }}
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         new Vue({
-            // the id name is define here, and root is our id name
-            // we pass it to el, because we want to change the element
-            el: '#root',
-            data: { 
-              // we need to pass the name of the object in our html code.
-              hello: 'Hello Vue!'
-            }
+          // here we call the html tag by the ID it has
+          el: '#root',
+          // Data is object which contain the information we want to manipulate it
+          data:{
+            greeting: "Welcome to The Vue Tutorial"
+          }
         })
     </script>
   </body>
