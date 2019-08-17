@@ -14,11 +14,11 @@
         </button>
             <ul>
                 <!-- Here we write simple js for loop in v-for -->
-                <li v-for="item in cat">{{ item }}</li>
+                <li v-for="item in cat">{{ item | capitalize }}</li>
             </ul>
             <h3>call element of object in array with v-for</h3>
             <ul>
-                <li v-for="index in cars"> {{ index.name }} </li>
+                <li v-for="index in cars"> {{ index.name | personalize }} </li>
             </ul>
             <car-name />
     </div>
@@ -61,6 +61,14 @@
                     // to make the field empty after printing the name in the list
                     this.newCar = ''
                 },
+            },
+            filters:{
+                capitalize: function(value){
+                    return value.toUpperCase()
+                },
+                personalize: function(value){
+                    return value+ " for pooya"
+                }
             },
             computed:{
                 carNames: function(){
