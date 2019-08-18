@@ -20,19 +20,20 @@
             <ul>
                 <li v-for="index in cars"> {{ index.name | personalize }} </li>
             </ul>
-            <car-name />
+            <car-name :cars="cars"/>
     </div>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script>
         Vue.component('car-name', {
+            props:['cars'],
             template:`
                 <ul>
-                    <li>Hasomo</li>    
+                    <li v-for="item in cars">{{ item.name }}</li>    
                 </ul>
                 `
         })
 
-        new Vue({
+        app = new Vue({
             el:'#root',
             component:[
                 'car-name'
@@ -62,6 +63,7 @@
                     this.newCar = ''
                 },
             },
+            // filters doesn't operate on data, it operates on method
             filters:{
                 capitalize: function(value){
                     return value.toUpperCase()
