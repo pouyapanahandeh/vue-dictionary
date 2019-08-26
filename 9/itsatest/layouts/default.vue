@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app :dark="darkMode">
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -90,6 +90,11 @@
 
 <script>
 export default {
+  computed:{
+    darkMode(){
+      return this.$store.getters.darkMode
+    }
+  },
   data () {
     return {
       clipped: false,
